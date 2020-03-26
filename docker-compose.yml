@@ -2,8 +2,8 @@ version: '3'
 
 services:
   web:
-    build: .
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    build: https://github.com/EliezerJD/backRFID.git
+    command: bash -c "pip3 install django-cors-headers &&python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     container_name: back
     volumes:
       - .:/back
