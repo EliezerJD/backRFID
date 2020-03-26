@@ -6,7 +6,7 @@ class rfid(models.Model):
     codigo = models.IntegerField(null=False) 
     status = models.CharField(max_length=100, null=False)
 
-    idalumno = models.CharField(max_length=10, null=False)
+    idalumno = models.CharField(max_length=10, null=True)
 
     def __str__(self):
         return self.name

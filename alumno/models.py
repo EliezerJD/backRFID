@@ -10,7 +10,7 @@ class alumno(models.Model):
     ap_mat = models.CharField(max_length=100, null=False)
     fecha = models.DateTimeField(default = timezone.now)
 
-    idrfid = models.CharField(max_length=10, null=False)
+    idrfid = models.CharField(max_length=10, null=True)
 
     def __str__(self):
         return self.name

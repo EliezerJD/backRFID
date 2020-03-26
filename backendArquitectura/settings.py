@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CORS_ORIGIN_ALLOW_ALL=True
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'login',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -60,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'backendArquitectura.urls'
@@ -89,10 +92,10 @@ WSGI_APPLICATION = 'backendArquitectura.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Arquitectura',
+        'NAME': 'Prueba',
         'USER': 'postgres',
-        'PASSWORD': 'ARQUI1234',
-        'HOST': 'arquitectura.cxpuqqowzot3.us-east-1.rds.amazonaws.com',
+        'PASSWORD': 'root2498',
+        'HOST': 'pg-db.c7pffel1w61l.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
