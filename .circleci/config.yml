@@ -14,11 +14,9 @@ jobs:
       
       
       - run:
-          command: chmod u+rwx manage.py
+          command: chmod u+rwx manage.py, python3 manage.py install django-cors-headers
           name: Test2
-      - run:
-          command: python3 manage.py install django-cors-headers
-          name: Test3    
+       
       
       - run:
           command: ./manage.py test
