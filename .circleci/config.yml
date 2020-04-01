@@ -11,6 +11,12 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
+      
+      
+      - run:
+          command: chmod u+rwx manage.py
+          name: Test2
+      
       - run:
           command: ./manage.py test
           name: Test
