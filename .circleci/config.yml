@@ -24,14 +24,14 @@ jobs:
       - run:
           command: pip3 install psycopg2-binary
           name: Test4   
-          
-          
-          
-       
-      
       - run:
           command: ./manage.py test
           name: Test 5
+          
+      - run:
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-16-113-1.us-east-2.compute.amazonaws.com "/bin/bash ./script.sh
+          name: Script    
 
 workflows:
   main:
