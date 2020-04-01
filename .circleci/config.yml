@@ -13,7 +13,7 @@ jobs:
       - python/save-cache
       
       - run:
-          command: chmod u+rwx manage.py, python3 manage.py install django-cors-headers
+          command: chmod u+rwx manage.py
           name: Test1
       - run:
           command: pip3 install django-cors-headers
