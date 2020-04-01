@@ -1,0 +1,39 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
+      
+      - run:
+          command: chmod u+rwx manage.py
+          name: Test1
+      - run:
+          command: pip3 install django-cors-headers
+          name: Test2
+      - run:
+          command: pip3 install djangorestframework
+          name: Test3
+      - run:
+          command: pip3 install psycopg2-binary
+          name: Test4   
+          
+          
+          
+       
+      
+      - run:
+          command: ./manage.py test
+          name: Test 5
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
