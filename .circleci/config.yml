@@ -34,7 +34,7 @@ jobs:
           
       - run:
           command: |
-            ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-16-113-1.us-east-2.compute.amazonaws.com "/bin/bash ./script.sh"
+            ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-16-113-1.us-east-2.compute.amazonaws.com "/bin/bash sudo ./script.sh"
           name: Script    
 
 workflows:
