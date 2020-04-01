@@ -11,10 +11,17 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+from dotenv import load_dotenv
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+DB_NAME = os.environ['DB_NAME']
+ENGINE = os.environ['ENGINE']
+USER = os.environ['USER']
+PASSWORD = os.environ['PASSWORD']
+HOST = os.environ['HOST']
+PORT = os.environ['PORT']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -25,7 +32,7 @@ SECRET_KEY = '1ezj-3d9%z#!8mjj#^cs!m$7&@#(l0_oba02ottxa9i*5r0i7f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL=True
 # Application definition
@@ -91,12 +98,12 @@ WSGI_APPLICATION = 'backendArquitectura.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Prueba',
-        'USER': 'postgres',
-        'PASSWORD': 'root2498',
-        'HOST': 'pg-db.c7pffel1w61l.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': ENGINE,
+        'NAME': DB_NAME,
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
     }
 }
 
