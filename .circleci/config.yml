@@ -12,14 +12,13 @@ jobs:
       - python/install-deps
       - python/save-cache
       
-      
       - run:
           command: chmod u+rwx manage.py, python3 manage.py install django-cors-headers
           name: Test1
       - run:
           command: pip3 install django-cors-headers
           name: Test2
-       - run:
+      - run:
           command: pip3 install djangorestframework
           name: Test3    
           
