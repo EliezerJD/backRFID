@@ -23,10 +23,14 @@ jobs:
           name: Test3
       - run:
           command: pip3 install psycopg2-binary
-          name: Test4   
+          name: Test4
+      - run:
+          command: pip3 install python-dotenv
+          name: Test5
+          
       - run:
           command: ./manage.py test
-          name: Test 5
+          name: Test 6
           
       - run:
           command: |
